@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    background-color:  black;
+    color: white;
+    font-family: 'Glory', sans-serif;
+}
+header{
+    background-color:  rgb(136, 25, 25);
+    color: white;
+    margin-right: 10px;
+    padding: 20px 0;
+    text-align: justify; 
+
+}
+.container {
+    max-width: 55%;
+    margin: 0 auto;
+}
+
+main p{
+    font-size: 1.5em;
+
+}
+.mainmenu ul{
+    padding: 0;
+    margin: 0;
+}
+
+.mainmenu li {
+    display: inline;
+    margin-right: 10px;
+    padding: 20px 0;
+    text-align: justify; 
+}
+ .mainmenu a {
+     text-decoration: none;
+     color: white;
+ }
+ #about {
+     color: white;
+ }
+
+ .pictr {
+     height: 300px;
+     text-align: center;
+     background-image: url(images/forest.jpg); 
+     background-repeat: no-repeat;
+     background-position: center;
+    margin: 3rem 0;
+ }
+
+ .pictr img{
+    height: 300px;
+    width: 400px;
+}
+ 
+.footer {
+    padding: 20px 0;
+}
