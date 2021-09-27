@@ -1,0 +1,25 @@
+body {
+    background-image: url(images/back.jpg);
+    background-color: #c7b39b;
+    background-size: 1600px 800px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+.form {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.footer {
+    padding: 20px 0;
+    color: grey;
+}
