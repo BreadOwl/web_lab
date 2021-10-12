@@ -121,15 +121,18 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    align-self:flex-start;
+    align-content: flex-start;
 }
 
 .product-card {
-    height: 350px;
-    width: 500px;
+    height: 450px;
+    width: 600px;
     border: 2px solid rgb(24, 66, 45);
     background-color: rgb(233, 217, 0);
     border-radius: 5px;
     display: flex;
+    align-content: flex-start;
 }
 
 .product-image {
@@ -156,7 +159,6 @@ body {
 
 .product-details .information {
     text-align: justify;
-    height: 65%;
     overflow: hidden;
     font-size: 0.9rem;
 }
@@ -165,30 +167,6 @@ body {
     text-align: center;
 }
 
-.product-details .btn {
-    background-color: #0885c6;
-    color: white;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 0;
-    overflow: hidden;
-}
-
-.product-details .btn span {
-    padding: 10px 20px;
-    display: inline-block;
-    font-size: 0.7rem;
-}
-
-.product-details .btn .price {
-    background-color: rgb(51, 51, 51);
-}
-
-.product-details .btn .buy {
-    font-weight: bold;
-}
 
 .footer {
     border-top: 5px solid rgb(24, 66, 45);
