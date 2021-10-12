@@ -1,0 +1,29 @@
+body {
+    background-image: url(images/back.jpg);
+    background-color: #c7b39b;
+    background-size: 1600px 800px;
+    font-family: 'Lobster', cursive;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+.form {
+    text-align: center;
+    background-color: rgb(47, 111, 184);
+    border: 5px solid #184291;
+    width:450px;
+    height: 250px;
+    margin: 50px auto 0 auto;
+    border-radius: 25px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.footer {
+    padding: 20px 0;
+    color: grey;
+}
