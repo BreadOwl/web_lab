@@ -4,6 +4,7 @@ body{
     color: white;
     font-family: 'Glory', sans-serif;
 }
+
 header{
     background-color:  rgb(136, 25, 25);
     color: white;
@@ -12,6 +13,7 @@ header{
     text-align: justify; 
 
 }
+
 .container {
     max-width: 55%;
     margin: 0 auto;
