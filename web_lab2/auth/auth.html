@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&family=Lobster&family=Open+Sans+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="form">
+            <h1>Авторизация</h1>
+            <form method="POST" action="https://httpbin.org/post" enctype="multipart/form-data">
+                <input type="hidden" name="user-id" value="7">
+                <div class="form-group">
+                    <label for="login">Логин</label>
+                    <input type="text" id="login" name="login" placeholder="qwerty@qwerty.ru" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" name="password" id="password">
+                </div>
+
+                <div class="form-group">
+                    <label for="remember" value="yes">Запомнить меня</label>
+                    <input type="checkbox" name="remember" id="remember">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Отправить">
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            &copy; 2021 Web-cat
+        </div>
+    </footer>
+</body>
+
+</html>
