@@ -1,9 +1,9 @@
+'use strict';
+
 function createPageBtn(page, classes=[]) {
     let btn = document.createElement('button');
     classes.push('btn');
-    for (cls of classes) {
-        btn.classList.add(cls);
-    }
+    btn.classList.add(...classes);
     btn.dataset.page = page;
     btn.innerHTML = page;
     return btn;
@@ -47,7 +47,7 @@ function setPaginationInfo(info) {
     document.querySelector('.total-count').innerHTML = info.total_count;
     let start = info.total_count > 0 ? (info.current_page - 1)*info.per_page + 1 : 0;
     document.querySelector('.current-interval-start').innerHTML = start;
-    let end = Math.min(info.total_count, start + info.per_page - 1)
+    let end = Math.min(info.total_count, start + info.per_page - 1);
     document.querySelector('.current-interval-end').innerHTML = end;
 }
 
@@ -104,9 +104,14 @@ function renderRecords(records) {
     }
 }
 
-function downloadData(page=1) {
+function downloadData(page = 1) {
     let factsList = document.querySelector('.facts-list');
-    let url = new URL(factsList.dataset.url);
+    let url;
+    if (newDataUrl == 0) {
+        url = new URL(factsList.dataset.url);
+    } else {
+        url = new URL(newDataUrl);
+    }
     let perPage = document.querySelector('.per-page-btn').value;
     url.searchParams.append('page', page);
     url.searchParams.append('per-page', perPage);
@@ -121,8 +126,53 @@ function downloadData(page=1) {
     xhr.send();
 }
 
+function clickHandler(event) {
+    let input = document.querySelector('input');
+    newDataUrl = "http://cat-facts-api.std-900.ist.mospolytech.ru/facts?q=" + input.value;
+    if (event.target) {
+        downloadData();
+        window.scrollTo(0, 0);
+    }
+}
+
+function autocomplete(event) {
+    let input = document.querySelector('input');
+    let requestUrl = "http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete?q=" + input.value;
+    if (event.target){
+        let ul = document.getElementById('list'); 
+        ul.innerHTML = '';
+        downloadInput(requestUrl);
+    }
+}
+
+function downloadInput(requestUrl) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.responseType = 'json';
+    xhr.onload = function () {
+        renderListIn(this.response);
+    }
+    xhr.send();
+}
+
+function renderListIn(arrayInput) {
+    let ul = document.getElementById('list');
+    for (let i = 0; i < arrayInput.length; i++) {
+        let li = document.createElement('li');
+        li.innerHTML = arrayInput[i];
+        ul.append(li);
+    }
+}
+
+
+let newDataUrl = 0;
+
 window.onload = function () {
     downloadData();
     document.querySelector('.pagination').onclick = pageBtnHandler;
     document.querySelector('.per-page-btn').onchange = perPageBtnHandler;
+
+    let searchBtn = document.querySelector('.search-btn');
+    searchBtn.addEventListener('click', clickHandler);
+    document.getElementById('search-field').oninput = autocomplete;
 }

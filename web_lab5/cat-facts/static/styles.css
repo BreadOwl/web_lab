@@ -115,6 +115,7 @@ body {
 .search-form {
     margin: 40px 0;
     display: flex;
+    flex-direction: column;
 }
 
 .search-field {
@@ -143,4 +144,30 @@ body {
 .search-btn:hover {
     background-color: #F2F5F1;
     color: black;
+}
+
+.search-input {
+    margin: 0 0 0 0;
+    display: flex;
+}
+
+.search-answer {
+    display: flex;
+}
+
+.list-input {
+    width: 100%;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+.facts-list-item {
+    margin-top: 20px;
+    background-color: #d7d7d7;
+}
+
+.facts-list-item:first-child {
+    margin-top: 0;
 }
