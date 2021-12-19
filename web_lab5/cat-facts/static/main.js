@@ -1,6 +1,6 @@
 'use strict';
 
-function createPageBtn(page, classes=[]) {
+function createPageBtn(page, classes = []) {
     let btn = document.createElement('button');
     classes.push('btn');
     btn.classList.add(...classes);
@@ -45,7 +45,7 @@ function perPageBtnHandler(event) {
 
 function setPaginationInfo(info) {
     document.querySelector('.total-count').innerHTML = info.total_count;
-    let start = info.total_count > 0 ? (info.current_page - 1)*info.per_page + 1 : 0;
+    let start = info.total_count > 0 ? (info.current_page - 1) * info.per_page + 1 : 0;
     document.querySelector('.current-interval-start').innerHTML = start;
     let end = Math.min(info.total_count, start + info.per_page - 1);
     document.querySelector('.current-interval-end').innerHTML = end;
@@ -59,7 +59,7 @@ function pageBtnHandler(event) {
 }
 
 function createAuthorElement(record) {
-    let user = record.user || {'name': {'first': '', 'last': ''}};
+    let user = record.user || { 'name': { 'first': '', 'last': '' } };
     let authorElement = document.createElement('div');
     authorElement.classList.add('author-name');
     authorElement.innerHTML = user.name.first + ' ' + user.name.last;
@@ -118,7 +118,7 @@ function downloadData(page = 1) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.responseType = 'json';
-    xhr.onload = function () {
+    xhr.onload = function() {
         renderRecords(this.response.records);
         setPaginationInfo(this.response['_pagination']);
         renderPaginationElement(this.response['_pagination']);
@@ -138,8 +138,8 @@ function clickHandler(event) {
 function autocomplete(event) {
     let input = document.querySelector('input');
     let requestUrl = "http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete?q=" + input.value;
-    if (event.target){
-        let ul = document.getElementById('list'); 
+    if (event.target) {
+        let ul = document.getElementById('list');
         ul.innerHTML = '';
         downloadInput(requestUrl);
     }
@@ -149,13 +149,13 @@ function downloadInput(requestUrl) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', requestUrl);
     xhr.responseType = 'json';
-    xhr.onload = function () {
-        renderListIn(this.response);
+    xhr.onload = function() {
+        renderList(this.response);
     }
     xhr.send();
 }
 
-function renderListIn(arrayInput) {
+function renderList(arrayInput) {
     let ul = document.getElementById('list');
     for (let i = 0; i < arrayInput.length; i++) {
         let li = document.createElement('li');
@@ -167,7 +167,7 @@ function renderListIn(arrayInput) {
 
 let newDataUrl = 0;
 
-window.onload = function () {
+window.onload = function() {
     downloadData();
     document.querySelector('.pagination').onclick = pageBtnHandler;
     document.querySelector('.per-page-btn').onchange = perPageBtnHandler;
