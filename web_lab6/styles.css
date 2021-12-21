@@ -1,0 +1,49 @@
+html, body {
+    background-color: #1F2833;
+    height: 100%;
+    position:relative; 
+    font-family: 'Mulish', sans-serif;
+}
+
+header {
+    background-color: #0B0C10;
+    color: blanchedalmond;
+    font-size: x-large;
+}
+
+.navbar-brand {
+    width: 10px;
+    height: 20 px;
+}
+
+.about {
+    background-color: #474B4F;
+    color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 110%;
+}
+
+.description {
+    padding-top: 30px;
+    color: blanchedalmond;
+    padding-bottom: 30px;
+}
+
+.form{
+    background-color: #474B4F;
+    color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+footer {
+    padding: 10px 0;
+    background-color: #0B0C10;
+    color: blanchedalmond;
+    text-align: center;
+    font-size: 80%;
+    bottom: 0;
+    width: 100%;
+}
