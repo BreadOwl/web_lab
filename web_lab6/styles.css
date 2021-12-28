@@ -1,20 +1,21 @@
-html, body {
+html,
+body {
     background-color: #1F2833;
     height: 100%;
-    position:relative; 
+    position: relative;
     font-family: 'Mulish', sans-serif;
 }
 
 header {
     background-color: #0B0C10;
-    color: blanchedalmond;
     font-size: x-large;
 }
 
-.navbar-brand {
+
+/* .navbar-brand {
     width: 10px;
-    height: 20 px;
-}
+    height: 20px;
+} */
 
 .about {
     background-color: #474B4F;
@@ -30,12 +31,25 @@ header {
     padding-bottom: 30px;
 }
 
-.form{
+.projects {
     background-color: #474B4F;
     color: black;
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
+    font: bold;
+    color: blanchedalmond;
+}
+
+.form {
+    color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.form :last-child {
+    margin-right: 0 !important;
 }
 
 footer {
@@ -46,4 +60,14 @@ footer {
     font-size: 80%;
     bottom: 0;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .header {
+        position: static;
+    }
+    .projects img {
+        width: 100%;
+        height: auto;
+    }
 }
