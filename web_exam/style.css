@@ -1,0 +1,27 @@
+html,
+body {
+    background-color: #F8E9A1;
+    height: 100%;
+    position: relative;
+}
+
+.nav {
+    background-color: #AFD275;
+}
+
+footer {
+    padding: 10px 0;
+    background-color: #AFD275;
+    text-align: center;
+    font-size: 80%;
+    bottom: 0;
+    width: 100%;
+    position:fixed;
+}
+
+@media (max-width: 768px) {
+    .header {
+        position: static;
+    }
+    
+}
