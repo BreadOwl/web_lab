@@ -21,6 +21,9 @@ function downloadData() {
 }
 
 
+function deleteBtnHandler(event) {
+}
+
 window.onload = function() {
     downloadData();
 }
