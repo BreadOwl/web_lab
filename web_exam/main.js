@@ -1,11 +1,25 @@
 'use strict';
 
 function dataOutput(estabData) {
+    let name = 'name';
+    let type = 'typeObject';
+    let address = 'address';
+    let firstRow = document.createElement('tr');
+    firstRow.innerHTML = `
+    <th>Название</th>
+                        <th>Тип</th>
+                        <th>Адрес</th>
+                        <th>Действие</th>`;
+    document.querySelector('.table').appendChild(firstRow);
     for (let i = 0; i < estabData.length; i++) {
-        estabList.append(estabData[i]);
-        document.getElementById('name').innerHTML = data.name;
-        document.getElementById('typeObject').innerHTML = data.typeObject;
-        document.getElementById('address').innerHTML = data.job;
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${estabData[i][name]}</td>
+            <td>${estabData[i][type]}</td>
+            <td>${estabData[i][address]}</td>
+            <td><button type="button" class="btn btn-light">Выбрать</button></td>
+        `;
+        document.querySelector('.table').appendChild(row);
     }
 }
 
@@ -15,7 +29,6 @@ async function downloadData() {
         const response = await fetch(url);
         const estabData = await response.json(); //преобразование данных
         console.log(estabData);
-        estabList.innerHTML = '';
         dataOutput(estabData);
     } catch (error) { //проверка ошибок
         console.log(error);
