@@ -1,9 +1,11 @@
 'use strict';
 
-function dataOutput(estabData) {
+function dataOutput(estabData) { //таблица с заведениями
     let name = 'name';
     let type = 'typeObject';
     let address = 'address';
+    let rate = 'rate';
+    let highRating;
     let firstRow = document.createElement('tr');
     firstRow.innerHTML = `
     <th>Название</th>
@@ -11,7 +13,7 @@ function dataOutput(estabData) {
                         <th>Адрес</th>
                         <th>Действие</th>`;
     document.querySelector('.table').appendChild(firstRow);
-    for (let i = 0; i < estabData.length; i++) {
+    for (let i = 0; i < 20; i++) {
         let row = document.createElement('tr');
         row.innerHTML = `
             <td>${estabData[i][name]}</td>
@@ -23,12 +25,12 @@ function dataOutput(estabData) {
     }
 }
 
-async function downloadData() {
+async function downloadData() { //загрузка данных с сервера
     let url = "http://exam-2022-1-api.std-900.ist.mospolytech.ru/api/restaurants?api_key=584ac04a-bca6-4605-8670-7d0b864deda8";
     try {
         const response = await fetch(url);
         const estabData = await response.json(); //преобразование данных
-        console.log(estabData);
+        //console.log(estabData);
         dataOutput(estabData);
     } catch (error) { //проверка ошибок
         console.log(error);
