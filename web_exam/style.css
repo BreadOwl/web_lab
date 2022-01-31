@@ -90,4 +90,10 @@ footer {
     .header {
         position: static;
     }
+    .navigation {
+        position: static;
+    }
+    .opt {
+        padding-left: 0px;
+    }
 }

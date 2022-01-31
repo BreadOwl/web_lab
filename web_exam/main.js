@@ -1,18 +1,22 @@
-function downloadData() {
-    let deliveryServices = document.querySelector('.delivery-services');
-    let url = new URL(factsList.dataset.url);
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-        renderRecords(this.response.records);
+'use strict';
+
+async function downloadData() {
+    let estabList = document.querySelector('.estab-list');
+    let url = "http://exam-2022-1-api.std-900.ist.mospolytech.ru/api/restaurants?api_key=584ac04a-bca6-4605-8670-7d0b864deda8";
+    try {
+        const response = await fetch(url);
+        const estabData = await response.json();
+        console.log(estabData);
+        estabList.innerHTML = '';
+        for (let i = 0; i < 100; i++) {
+            estabList.append(estabData[i]);
+        }
+    } catch (error) {
+        console.log(error);
     }
-    xhr.send();
 }
-
-
-function deleteBtnHandler(event) {}
 
 window.onload = function() {
     downloadData();
+
 }
