@@ -25,6 +25,16 @@ h4 {
     padding: 30px 30px 30px 30px;
 }
 
+.carus {
+    padding: 30px 30px;
+    margin-bottom: 30px;
+    width: 300px;
+}
+
+.carus img {
+    height: 200px;
+}
+
 .catering-establishment {
     padding: 30px 30px 30px 30px;
 }

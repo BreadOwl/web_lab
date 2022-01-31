@@ -8,10 +8,10 @@ async function downloadData() {
         const estabData = await response.json();
         console.log(estabData);
         estabList.innerHTML = '';
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < estabData.length; i++) {
             estabList.append(estabData[i]);
         }
-    } catch (error) {
+    } catch (error) { //проверка ошибок
         console.log(error);
     }
 }
