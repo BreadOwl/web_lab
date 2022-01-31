@@ -83,20 +83,53 @@
             <button type="button" class="btn btn-secondary">Найти</button>
         </div>
         <div class="estab">
-
+            <table class="table table-hover">
+                <tr class="table">
+                    <th>Название</th>
+                    <th>Тип</th>
+                    <th>Адрес</th>
+                    <th>Действие</th>
+                </tr>
+                <tr>
+                    <td class="table">
+                        <tr>
+                            <td>34,5</td>
+                            <td>3,5</td>
+                            <td>36</td>
+                            <td>23</td>
+                        </tr>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 
     <div class="menu">
         <h4>Меню</h4>
+        <div class="menu-card">
+            <div class="card" style="width: 18rem;">
+                <img src="images/menu.png" class="card-img-top" alt="menu">
+                <div class="card-body">
+                    <h5 class="card-title">Название</h5>
+                    <p class="card-text">Описание</p>
+                    <p class="card-text">100 руб.</p>
+                    <button type="button" class="btn btn-primary">В корзину</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="options">
         <h4>Дополнительные опции</h4>
+        <div class="opt">
+            <input type="checkbox"><label>На компанию</label><br>
+            <input type="checkbox"><label>Только горячим</label>
+        </div>
     </div>
 
     <div class="final">
-        <h4>Итого: </h4>
+        <h4>Итого: <span class="current-interval-start">0</span> руб.</h4>
+        <button type="button" class="btn btn-light">Оформить заказ</button>
     </div>
 
     <footer>
