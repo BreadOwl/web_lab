@@ -2,100 +2,106 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital@1&family=Amatic+SC&family=Mulish:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="nav">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.png" alt="logo" width="30" height="24">
-        </a>
-        <div class="navbar-nav me-2">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Описание</a>
-          <a class="nav-link" href="#">Предприятия</a>
-          <a class="nav-link" href="#">Меню</a>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-  <div class="allert">
-
-  </div>
-
-  <div class="description">
-    <div class="row justify-content-between">
-      <div class="col-4">
-        <h2>Служба доставки CatDelivery</h2>
-
-        <h3>Наши преимущества</h3>
-        <ul>
-          <li>Скорость. Для заказа нужно заполнить лишь форму на сайте. Заказ принимается в течении 5 минут.</li>
-          <li>Цены. Стоимость доставки ниже. Если курьер не успевает доставить заказ в течении часа после получения
-            заказа, клиенту делают скидку в 50 процентов.</li>
-          <li>Отчетность. Клиент может следить за всеми стадиями доставки.</li>
-          <li>Дополнительные услуги.
-            <ul>
-              <li> На компанию. В информации о заказе количество всех заказанных сетов
-                увеличивается в 5 раз. Цена увеличивается в в 2.5 раза. </li>
-              <li>Только горячим. В информации о заказе добавляется информация, что если заказ будет
-                холодным, то цена снизится на 30% от финальной цены с учетом других опций с
-                указанием цены со скидкой. Пример: Если заказ приедет холодным то он будет Вам
-                стоить 500р.</li>
-            </ul>
-        </ul>
-      </div>
-      <div class="col-4">
-
-      </div>
+    <div class="navigation">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="logo" width="30" height="24"> Служба доставки CatDelivery
+                </a>
+                <div class="navbar-nav me-2">
+                    <a class="nav-link" href="#description">Описание</a>
+                    <a class="nav-link" href="#catering-establishment">Предприятия</a>
+                    <a class="nav-link" href="#menu">Меню</a>
+                    <a class="nav-link" href="#options">Дополнительные опции</a>
+                </div>
+            </div>
+        </nav>
     </div>
-  </div>
 
-  <div class="delivery-services" data-url="http://exam-2022-1-api.std-900.ist.mospolytech.ru/api/restaurants">
-    <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-           <div class="carousel-item active"> службы доставки
-            
-          </div>
-          <div class="carousel-item">
-            
-          </div>
-          <div class="carousel-item">
-            
-          </div>
+    <div class="allert">
+
+    </div>
+
+    <div class="description">
+        <div class="row align-items-center g-0">
+            <div class="col-9">
+                <h2>Служба доставки CatDelivery</h2>
+                <h4>Наши преимущества</h4>
+                <ul>
+                    <li>Скорость. Для заказа нужно заполнить лишь форму на сайте. Заказ принимается в течении 5 минут.</li>
+                    <li>Цены. Стоимость доставки ниже. Если курьер не успевает доставить заказ в течении часа после получения заказа, клиенту делают скидку в 50 процентов.</li>
+                    <li>Отчетность. Клиент может следить за всеми стадиями доставки.</li>
+                    <li>Дополнительные услуги.
+                        <ul>
+                            <li> На компанию. В информации о заказе количество всех заказанных сетов увеличивается в 5 раз. Цена увеличивается в в 2.5 раза. </li>
+                            <li>Только горячим. В информации о заказе добавляется информация, что если заказ будет холодным, то цена снизится на 30% от финальной цены с учетом других опций с указанием цены со скидкой.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <img src="images/del.jpg" class="img-fluid rounded" alt="del">
+            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Предыдущий</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Следующий</span>
-        </button>
-      </div> -->
-  </div>
+    </div>
 
-  <div class="catering-establishment">
 
-  </div>
+    <div class="catering-establishment">
+        <h4>Выбор предприятия общественного питания</h4>
+        <div class="choice">
+            Административный округ
+            <select>
+              <option>ЦАО</option>
+              <option>ВАО</option>
+              <option>САО</option>
+              <option>ЮАО</option>
+            </select> Район
+            <select>
+              <option>Левый</option>
+              <option>Правый</option>
+            </select> Тип
+            <select>
+              <option>Кафе</option>
+              <option>Столовая</option>
+            </select> Соц. скидки
+            <select>
+              <option>Есть</option>
+              <option>Нет</option>
+            </select>
+            <button type="button" class="btn btn-secondary">Найти</button>
+        </div>
+        <div class="estab">
 
-  <div class="menu">
+        </div>
+    </div>
 
-  </div>
+    <div class="menu">
+        <h4>Меню</h4>
+    </div>
 
-  <footer>
-    &copy; ООО Cat-Delivery 2022
-    notadofmail@gmail.com
-  </footer>
+    <div class="options">
+        <h4>Дополнительные опции</h4>
+    </div>
+
+    <div class="final">
+        <h4>Итого: </h4>
+    </div>
+
+    <footer>
+        &copy; ООО Cat-Delivery 2022 notadogmail@gmail.com
+    </footer>
 </body>
 
 </html>
