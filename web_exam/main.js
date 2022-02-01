@@ -1,11 +1,29 @@
 'use strict';
 
+function sortHighRating(estabData) { //сортировка рейтингов
+    let highRating = new Array();
+    let rate = "rate";
+    let max = 0;
+    let maxJ;
+    for (let i = 0; i < 20; i++) {
+        for (let j = 0; j < estabData.length; j++) {
+            if (max <= estabData[j][rate]) {
+                max = estabData[j][rate];
+                maxJ = j;
+            }
+        }
+        highRating.push(estabData[maxJ]);
+        estabData[maxJ][rate] = 0;
+        max = 0;
+    }
+    return highRating;
+}
+
 function dataOutput(estabData) { //таблица с заведениями
     let name = 'name';
     let type = 'typeObject';
     let address = 'address';
-    let rate = 'rate';
-    let highRating;
+    let highRating = sortHighRating(estabData);
     let firstRow = document.createElement('tr');
     firstRow.innerHTML = `
     <th>Название</th>
@@ -16,9 +34,9 @@ function dataOutput(estabData) { //таблица с заведениями
     for (let i = 0; i < 20; i++) {
         let row = document.createElement('tr');
         row.innerHTML = `
-            <td>${estabData[i][name]}</td>
-            <td>${estabData[i][type]}</td>
-            <td>${estabData[i][address]}</td>
+            <td>${highRating[i][name]}</td>
+            <td>${highRating[i][type]}</td>
+            <td>${highRating[i][address]}</td>
             <td><button type="button" class="btn btn-light">Выбрать</button></td>
         `;
         document.querySelector('.table').appendChild(row);
