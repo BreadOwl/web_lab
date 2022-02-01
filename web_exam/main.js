@@ -20,12 +20,12 @@ function sortHighRating(estabData) { //сортировка рейтингов
 }
 
 function dataOutputArea(estabData) { //выпадающие списки с выбором округа
-    let admAreaList = document.getElementById('admArea');
+    let admArea = "admArea";
     let arr = [0];
     let check;
-    for (let estabData of estabData) {
+    for (let w = 0; w < estabData.length; w++) {
         for (let i = 0; i < arr.length; i++) {
-            if (estabData.admArea != arr[i]) {
+            if (estabData[w][admArea] != arr[i]) {
                 check = true;
             } else {
                 check = false;
@@ -33,26 +33,40 @@ function dataOutputArea(estabData) { //выпадающие списки с вы
             }
         }
         if (check == true) {
-            admAreaList.append(createAdmAreaList(estabData));
+            let newC = document.createElement('option');
+            newC.innerHTML = `${estabData[w][admArea]}`;
+            document.querySelector('.admArea').appendChild(newC);
             check = 0;
-            arr.push(estabData.admArea);
+            arr.push(estabData[w][admArea]);
         }
     }
 }
 
-function createAdmAreaList(estabData) {
-    let itemElement = document.createElement('option');
-    itemElement.innerHTML = estabData.admArea;
-    return itemElement;
-}
-
 function dataOutputDistrict(estabData) { //выпадающие списки с выбором района
     let district = "district";
+    let arr = [0];
+    let check;
+    for (let w = 0; w < estabData.length; w++) {
+        for (let i = 0; i < arr.length; i++) {
+            if (estabData[w][district] != arr[i]) {
+                check = true;
+            } else {
+                check = false;
+                break;
+            }
+        }
+        if (check == true) {
+            let newC = document.createElement('option');
+            newC.innerHTML = `${estabData[w][district]}`;
+            document.querySelector('.district').appendChild(newC);
+            check = 0;
+            arr.push(estabData[w][district]);
+        }
+    }
 }
 
 function dataOutputType(estabData) { //выпадающие списки с выбором типа
     let typeObject = "typeObject";
-    let typeList = document.getElementById("type");
     let arr = [0];
     let check;
     for (let w = 0; w < estabData.length; w++) {
@@ -65,11 +79,9 @@ function dataOutputType(estabData) { //выпадающие списки с вы
             }
         }
         if (check == true) {
-            typeList.append(function() {
-                let newC = document.createElement('option');
-                newC.innerHTML = `${estabData[w][typeObject]}`;
-                document.querySelector('.typeObject').appendChild(newC);
-            });
+            let newC = document.createElement('option');
+            newC.innerHTML = `${estabData[w][typeObject]}`;
+            document.querySelector('.typeObject').appendChild(newC);
             check = 0;
             arr.push(estabData[w][typeObject]);
         }
