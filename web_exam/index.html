@@ -75,23 +75,40 @@
         </div>
     </div>
 
-    <div class="catering-establishment" id="">
+    <div class="catering-establishment">
         <h4>Выбор предприятия общественного питания</h4>
         <div class="choice">
             Административный округ
             <select>
-              <option>ЦАО</option>
-              <option>ВАО</option>
-              <option>САО</option>
-              <option>ЮАО</option>
+              <option>Центральный административный округ</option>
+              <option>Восточный административный округ</option>
+              <option>Северный административный округ</option>
+              <option>Южный административный округ</option>
+              <option>Западный административный округ</option>
             </select> Район
             <select>
-              <option>Левый</option>
-              <option>Правый</option>
+              <option>Тропарёво-Никулино</option>
+              <option>Можайский</option>
+              <option>Проспект Вернадского</option>
+              <option>Фили-Давыдково</option>
+              <option>Бескудниковский</option>
+              <option>Дорогомилово</option>
+              <option>Тимирязевский</option>
+              <option>Сокол</option>
+              <option>Тверской</option>
+              <option>Хамовники</option>
+              <option>Басманный</option>
+              <option>Лефортово</option>
+              <option>Мещанский</option>
             </select> Тип
             <select>
-              <option>Кафе</option>
-              <option>Столовая</option>
+              <option>кафе</option>
+              <option>столовая</option>
+              <option>магазин (отдел кулинарии)</option>
+              <option>ресторан</option>
+              <option>буфет</option>
+              <option>закусочная</option>
+              <option>предприятие быстрого обслуживания</option>
             </select> Соц. скидки
             <select>
               <option>Есть</option>
@@ -116,7 +133,9 @@
                     <h5 class="card-title">Название</h5>
                     <p class="card-text">Описание</p>
                     <p class="card-text">100 руб.</p>
-                    <button type="button" class="btn btn-primary">В корзину</button>
+                    <button type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                    <input type="number" min="0" max="100" value="1" readonly class="raz">
+                    <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                 </div>
             </div>
         </div>
@@ -132,7 +151,50 @@
 
     <div class="final">
         <h4>Итого: <span class="current-interval-start">0</span> руб.</h4>
-        <button type="button" class="btn btn-light">Оформить заказ</button>
+        <button data-bs-toggle="modal" data-bs-target="#checkout" class="btn btn-light" data-action="create">Оформить заказ</button>
+    </div>
+
+    <div class="modal" id="checkout" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Оформление заказа</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="positions">
+                        <h5>Позиции</h5>
+                        Название кол х руб. итоговая сумма
+                    </div>
+                    <div class="add-options">
+                        <h5>Дополнительные опции</h5>
+                        <input type="checkbox"><label>На компанию</label><br>
+                        <input type="checkbox"><label>Только горячим</label>
+                    </div>
+                    <div class="place">
+                        <h5>Информация о предприятии</h5>
+                        <p>Название</p>
+                        <p>Округ</p>
+                        <p>Район</p>
+                        <p>Адрес</p>
+                        <p>Рейтинг</p>
+                    </div>
+                    <div class="delivery">
+                        <h5>Доставка</h5>
+                        <p>ФИО получателя: <input type="text" size="40"></p>
+                        <p>Адрес доставки: <textarea name="del-address" cols="40" rows="3"></textarea></p>
+                        <p>Стоимость доставки: </p>
+                    </div>
+                    <div class="final-price">
+                        <h5>Итого:</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
