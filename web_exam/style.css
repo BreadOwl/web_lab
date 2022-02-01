@@ -26,13 +26,11 @@ h4 {
 }
 
 .carus {
-    padding: 30px 30px;
-    margin-bottom: 30px;
-    width: 300px;
+    text-align: center;
 }
 
 .carus img {
-    height: 200px;
+    height: 500px;
 }
 
 .catering-establishment {
